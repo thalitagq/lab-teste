@@ -1,0 +1,19 @@
+.topBarNavegationContainer {
+  background-color: #1F1F1F;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 600;
+  width: 100vw;
+  height: 68px;
+  justify-content: center;
+  text-align: center;
+  
+  .topBarNavegationTitle {
+    margin-left: calc(50vw - 60px);
+    transform: translate(-50%,0);
+  }
+
+  svg{
+    color: #fff;
+  }
+}

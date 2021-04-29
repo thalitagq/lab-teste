@@ -1,0 +1,42 @@
+.logo{
+  width: 97px;
+  height: auto;
+  margin-bottom: 48px;
+}
+
+.inputField{
+  background-color: #fff;
+  color: #535353;
+  height: 56px;
+  font-size: 20px;
+  padding-left: 20px;
+  border: 0;
+  border-radius: 12px;
+  margin-bottom: 19px;
+}
+
+.loginContainer{
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.loginButton{
+  background-color: #FFCE00;
+  color: #030202;
+  height: 56px;
+  font-size: 20px;
+  border: 0;
+  border-radius: 12px;
+  transition: filter 0.3s;
+
+  &:hover{
+    background-color: #FFCE00;
+    filter: brightness(.8);
+  }
+
+}
+

@@ -1,0 +1,35 @@
+.topBarContainer{ 
+  background-color: #1F1F1F;
+  width: 100vw;
+  height: 126px;
+  position: relative;
+  margin-bottom: 100px;
+} 
+
+.topBarTitle{
+  color: #fff;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.avatar {
+  width: 115px;
+  height: 115px;
+  border: 3px solid #fff;
+  position: absolute;
+  z-index: 1;
+  right: 50%;
+  top: 0;
+  transform: translate(50%, 55%);
+}
+
+.logoutButton {
+  color: #fff;
+  font-size: 17px;
+  margin-left: auto;  
+
+  svg{
+    color: #D03434;
+    margin-left: 10px;
+  }
+}

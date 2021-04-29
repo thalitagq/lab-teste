@@ -1,0 +1,16 @@
+.navbar{
+  color:#a5a5a5;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.selected{
+  color: #000000;
+
+  svg {
+    color: #000;
+  }
+}

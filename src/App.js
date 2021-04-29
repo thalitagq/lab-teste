@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import AuthProvider from './contexts/auth'
+import Routes from './routes';
+import { StylesProvider } from "@material-ui/styles";
+import { Grid } from '@material-ui/core';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <AuthProvider>
+      <StylesProvider injectFirst>
+        <Grid
+          container
+          direction = "column"
+          justify = "center"
+          alignItems = "center" 
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          <Routes/>
+        </Grid>
+      </StylesProvider>
+    </AuthProvider>
   );
 }
 

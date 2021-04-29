@@ -1,0 +1,40 @@
+.usersListContainer{
+
+  .divider {
+    background-color: #7070705A;
+  }
+
+  .listcell{
+    padding: 20px 0 20px 25px;
+
+    &::before {
+      content: "";
+      width: 10px;
+      height: 42px;
+      background: #FFCE00;
+      position: absolute;
+      left: 0;
+      border-bottom-right-radius: 100px;
+      border-top-right-radius: 100px;
+    }
+  }
+
+  .userListAvatar{
+    width: 64px;
+    height: 64px;
+    border: 3px solid #fff;
+    margin-right: 32px;
+  }
+
+  .userListText{
+    span{
+      color: #fff;
+      font-size: 16px;
+      font-weight: 600;
+    }
+  }
+
+  svg{
+    color: #fff;
+  }
+}
