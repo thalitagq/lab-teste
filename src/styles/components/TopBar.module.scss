@@ -6,11 +6,20 @@
   margin-bottom: 100px;
 } 
 
+.toolBar{
+  justify-content: space-between;
+}
+
 .topBarTitle{
   color: #fff;
   font-size: 17px;
   font-weight: 600;
 }
+
+.topBarTitleTranslate {
+  transform: translate(20px,0);
+}
+
 
 .avatar {
   width: 115px;
@@ -26,10 +35,27 @@
 .logoutButton {
   color: #fff;
   font-size: 17px;
-  margin-left: auto;  
+  // margin-left: auto;  
 
   svg{
     color: #D03434;
     margin-left: 10px;
+  }
+}
+
+.saveButton{
+  color: #fff;
+  font-size: 17px;
+  // margin-left: auto;
+
+  svg {
+    color: #5CBC29;
+    margin-left: 10px;
+  }
+}
+
+.backButton{
+  svg{
+    color: #fff;
   }
 }

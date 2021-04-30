@@ -31,10 +31,9 @@ export default function ReposList(props: ReposListProps){
                 <ListItemText
                   primary={`#${repo.name}`}
                   classes={{ root: styles.reposListTitle }}
-                  // secondary={ repo.description }
                   secondary={
                     <React.Fragment>
-                      {repo.description && <p className={styles.subTitle}>{repo.description}</p>}
+                      {repo.description && <span className={styles.subTitle}>{repo.description}</span>}
                       <span className={styles.repoInfo}>
                         <span className={styles.star}><BiStar />{repo.stargazers_count}</span>
                         {repo.private 

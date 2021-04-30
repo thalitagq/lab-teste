@@ -1,18 +1,18 @@
 import { BottomNavigation, BottomNavigationAction } from '@material-ui/core';
-import {useState} from 'react'
 import {FiGithub, FiHome, FiUsers} from 'react-icons/fi'
 import { Link } from 'react-router-dom';
+import { useNavbarContext } from '../contexts/navbarContext';
 
 import styles from '../styles/components/Navbar.module.scss'
 
 export default function Navbar() {
-  const [value, setValue] = useState(0);
+  const{currentPage, handleChangePage} = useNavbarContext()
 
   return(
     <BottomNavigation
-      value={value}
+      value={currentPage}
       onChange={(event, newValue) => {
-        setValue(newValue);
+        handleChangePage(newValue)
       }}
       showLabels
       classes={{root: styles.navbar}}

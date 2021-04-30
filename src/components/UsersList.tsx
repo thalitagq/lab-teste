@@ -1,5 +1,6 @@
 import { Avatar, Divider, IconButton, List, ListItem, ListItemAvatar, ListItemSecondaryAction, ListItemText } from "@material-ui/core";
 import { AiOutlineArrowRight } from "react-icons/ai";
+import { Link } from "react-router-dom";
 import styles from '../styles/components/UsersList.module.scss'
 
 interface UserListProps{
@@ -19,12 +20,19 @@ interface User{
 }
 
 export default function UsersList(props: UserListProps) {
+
   return(
     <List className={styles.usersListContainer}>
       {props.list?.map((user) => {
         return(
           <div key={user.id}>
-            <ListItem alignItems="center" className={styles.listcell} >
+            <ListItem 
+              button
+              alignItems="center" 
+              className={styles.listcell} 
+              component={Link}
+              to={{ pathname: `/seguidores/${user.login}`, state: user.login }}
+            >
               <ListItemAvatar>
                 <Avatar alt={user.login} src={user.avatar_url} className={styles.userListAvatar}/>
               </ListItemAvatar>
