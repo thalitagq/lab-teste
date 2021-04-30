@@ -11,7 +11,6 @@ export default function Login(){
 
   function handleInput(event: React.ChangeEvent<HTMLInputElement>) {
     setUserName(event.target.value)
-    console.log(userName)
   }
 
   return(
@@ -34,7 +33,6 @@ export default function Login(){
       >
         ENTRAR
       </Button>
-
     </div>
   )
 }

@@ -6,7 +6,11 @@ import styles from '../styles/components/TopBar.module.scss'
 
 export default function TopBar() {
 
-  const {user} = useAuth()
+  const {user, Logout} = useAuth()
+
+  async function handleLogout() {
+    Logout();
+  }
 
   return(
     <AppBar position="static" className={styles.topBarContainer}>
@@ -17,7 +21,12 @@ export default function TopBar() {
           src={user?.avatar_url}
           className={styles.avatar}
         />
-        <IconButton edge="end" className={styles.logoutButton} aria-label="Sair">
+        <IconButton 
+          edge="end" 
+          className={styles.logoutButton} 
+          aria-label="Sair"
+          onClick={handleLogout}
+        >
           Sair
           <FiLogOut/>
         </IconButton>

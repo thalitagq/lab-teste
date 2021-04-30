@@ -16,8 +16,10 @@ interface User{
   starred_url: string,
   public_gists: number,
   email?: string,
-  loacation?: string
-  public_repos?: number
+  loacation?: string,
+  public_repos?: number,
+  organizations_url: string,
+  repos_url: string,
 
 
   // avatar_url: "https://avatars.githubusercontent.com/u/23299150?v=4"
@@ -83,7 +85,6 @@ export default function AuthProvider({ children }: AuthContextProviderProps) {
       // handle success
       setUser(response.data);
       sessionStorage.setItem('@App:user', JSON.stringify(response.data));
-      console.log(response);
     })
     .catch((error) => {
       // handle error

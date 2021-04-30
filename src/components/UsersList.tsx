@@ -2,55 +2,46 @@ import { Avatar, Divider, IconButton, List, ListItem, ListItemAvatar, ListItemSe
 import { AiOutlineArrowRight } from "react-icons/ai";
 import styles from '../styles/components/UsersList.module.scss'
 
-export default function UsersList() {
+interface UserListProps{
+  list?: User[]
+}
+
+interface User{
+  id: number
+  avatar_url: string
+  followers_url: string
+  following_url: string
+  gists_url: string
+  login: string
+  organizations_url: string
+  repos_url: string
+  starred_url: string
+}
+
+export default function UsersList(props: UserListProps) {
   return(
-    <div>
-      <List className={styles.usersListContainer}>
-        <ListItem alignItems="center" className={styles.listcell}>
-          <ListItemAvatar>
-            <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" className={styles.userListAvatar}/>
-          </ListItemAvatar>
-          <ListItemText
-            primary="Brunch this weekend?"
-            classes={{ root: styles.userListText }}
-          />
-          <ListItemSecondaryAction>
-            <IconButton edge="start" className={styles.logoutButton} aria-label="Sair">
-              <AiOutlineArrowRight />
-            </IconButton>
-          </ListItemSecondaryAction>
-        </ListItem>
-        <Divider variant="fullWidth" component="li" classes={{root: styles.divider}}/>
-        <ListItem alignItems="center" className={styles.listcell}>
-          <ListItemAvatar>
-            <Avatar alt="Travis Howard" src="/static/images/avatar/2.jpg" className={styles.userListAvatar}/>
-          </ListItemAvatar>
-          <ListItemText
-            primary="Summer BBQ"
-            classes={{root: styles.userListText}}
-          />
-          <ListItemSecondaryAction>
-            <IconButton edge="start" className={styles.logoutButton} aria-label="Sair">
-              <AiOutlineArrowRight />
-            </IconButton>
-          </ListItemSecondaryAction>
-        </ListItem>
-        <Divider variant="fullWidth" component="li" classes={{ root: styles.divider }} />
-        <ListItem alignItems="center" className={styles.listcell}>
-          <ListItemAvatar>
-            <Avatar alt="Cindy Baker" src="/static/images/avatar/3.jpg" className={styles.userListAvatar}/>
-          </ListItemAvatar>
-          <ListItemText
-            primary="Oui Oui"
-            classes={{root: styles.userListText}}
-          />
-          <ListItemSecondaryAction>
-            <IconButton edge="start" className={styles.logoutButton} aria-label="Sair">
-              <AiOutlineArrowRight />
-            </IconButton>
-          </ListItemSecondaryAction>
-        </ListItem>
-      </List>
-    </div>
+    <List className={styles.usersListContainer}>
+      {props.list?.map((user) => {
+        return(
+          <div key={user.id}>
+            <ListItem alignItems="center" className={styles.listcell} >
+              <ListItemAvatar>
+                <Avatar alt={user.login} src={user.avatar_url} className={styles.userListAvatar}/>
+              </ListItemAvatar>
+              <ListItemText
+                primary={`#${user.login}`}
+                classes={{ root: styles.userListText }}
+              />
+              <ListItemSecondaryAction>
+                <IconButton edge="start" className={styles.logoutButton} aria-label="Ver usuário">
+                  <AiOutlineArrowRight />
+                </IconButton>
+              </ListItemSecondaryAction>
+            </ListItem>
+            <Divider variant="fullWidth" component="li" classes={{root: styles.divider}}/>
+          </div>
+        )
+      })}
+    </List>
   )
 }

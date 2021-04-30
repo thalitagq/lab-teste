@@ -1,0 +1,76 @@
+.reposListContainer {
+  margin-bottom: 48px;
+  
+  .divider {
+    background-color: #7070705A;
+  }
+
+  .listcell {
+    padding: 20px 0 20px 25px;
+
+    &::before {
+      content: "";
+      width: 10px;
+      height: 42px;
+      background: #FFCE00;
+      position: absolute;
+      left: 0;
+      border-bottom-right-radius: 100px;
+      border-top-right-radius: 100px;
+    }
+  }
+
+  .reposListTitle {
+    
+    span {
+      color: #fff;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .subTitle{
+      color: #fff;
+      font-size: 15px;
+      font-weight: 300;
+      margin-bottom: 14px;
+    }
+  }
+
+  svg {
+    color: #fff;
+  }
+
+  .repoInfo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .star{
+      display: flex;
+      font-size: 15px;
+      font-weight: 300;
+
+      svg{
+        color: #FFCE00;
+        font-size: 20px;
+        margin-right: 5px;
+      }
+    }
+  
+    .lockOpen{
+      font-size: unset;
+      
+      svg {
+        color:#63BF1F;
+        font-size: 20px;
+      }
+    }
+  
+    .lockClosed {
+      svg {
+        color: #CC042A;
+        font-size: 20px;
+      }
+    }
+  }
+}
