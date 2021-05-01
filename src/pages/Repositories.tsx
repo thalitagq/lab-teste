@@ -1,10 +1,10 @@
-import { Container } from "@material-ui/core";
-import { useEffect, useState } from "react";
-import ReposList from "../components/ReposList";
-import TopBarNavegation from "../components/TobBarNavegation";
+import { lazy, useEffect, useState } from "react";
 import { useAuth } from "../contexts/auth";
 import { api } from "../services/api";
 
+const ReposList = lazy(() => import('../components/ReposList'));
+const TopBarNavegation = lazy(() => import('../components/TobBarNavegation'));
+const Container = lazy(() => import('@material-ui/core/Container'));
 
 export default function Repositories() {
   
@@ -16,7 +16,6 @@ export default function Repositories() {
       try {
         const response = await api.get(`${user?.repos_url}`)
         setRepos(response.data)
-        console.log(response);
       } catch (error) {
         console.error(error);
       }

@@ -17,7 +17,6 @@ export default function NavbarProvider({ children }: NavbarContextProviderProps)
   
   function handleChangePage(page: number) {
     setCurrentPage(page)
-    console.log('currentPage: ' + currentPage)
   }
 
   return (

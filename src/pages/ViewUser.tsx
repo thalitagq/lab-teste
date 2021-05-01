@@ -1,9 +1,10 @@
-import { Container } from "@material-ui/core";
-import { useEffect, useState } from "react";
+import { lazy, useEffect, useState } from "react";
 import { useLocation } from "react-router";
-import TopBar from "../components/TopBar";
-import User from "../components/User";
 import { api } from "../services/api";
+
+const TopBar = lazy(() => import('../components/TopBar'))
+const User = lazy(() => import('../components/User'))
+const Container = lazy(() => import('@material-ui/core/Container'))
 
 interface ViewUserInfo {
   avatar_url: string,
@@ -33,7 +34,6 @@ export default function ViewUser(){
       try {
         const response = await api.get(`users/${login}`)
         setViewUser(response.data)
-        console.log(response);
       } catch (error) {
         console.error(error);
       }
@@ -42,11 +42,11 @@ export default function ViewUser(){
   }, [login]);
 
   return(
-    <div>
+    <>
       <TopBar isHome={false} login={viewUser.login} avatar_url={viewUser.avatar_url}/>
       <Container maxWidth="md" style={{ padding: 0 }}>
         <User user={viewUser}/>
       </Container>
-    </div>
+    </>
   )
 }

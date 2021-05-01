@@ -29,7 +29,6 @@ export default function TopBar(props: TopBarProps) {
 
   return(
     <AppBar position="static" className={styles.topBarContainer}>
-      {console.log(props)}
       <Toolbar variant="dense" className={styles.toolBar}>
         {props.isHome
         ?(

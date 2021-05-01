@@ -1,6 +1,6 @@
 .logo{
-  width: 97px;
-  height: auto;
+  width: 98px;
+  height: 97px;
   margin-bottom: 48px;
 }
 
@@ -13,6 +13,12 @@
   border: 0;
   border-radius: 12px;
   margin-bottom: 19px;
+  width: 300px
+}
+
+.errorText {
+  color: #EB2D2D;
+  font-size: 14px;
 }
 
 .loginContainer{

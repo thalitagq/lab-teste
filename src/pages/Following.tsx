@@ -1,9 +1,10 @@
-import { Container } from "@material-ui/core";
-import { useEffect, useState } from "react";
-import TopBarNavegation from "../components/TobBarNavegation";
-import UsersList from "../components/UsersList";
+import { lazy, useEffect, useState } from "react";
 import { useAuth } from "../contexts/auth";
 import { api } from "../services/api";
+
+const TopBarNavegation = lazy(() => import('../components/TobBarNavegation'));
+const UsersList = lazy(() => import('../components/UsersList'));
+const Container = lazy(() => import('@material-ui/core/Container'))
 
 export default function Following(){
 
@@ -15,7 +16,6 @@ export default function Following(){
       try {
         const response = await api.get(`users/${user?.login}/following`)
         setFollowingList(response.data)
-        console.log(response);
       } catch (error) {
         console.error(error);
       }

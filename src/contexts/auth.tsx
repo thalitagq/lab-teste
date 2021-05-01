@@ -48,21 +48,17 @@ export default function AuthProvider({ children }: AuthContextProviderProps) {
 
   async function Login(userName: string) {
     await api.get(`/users/${userName}`).then( (response) => {
-      // handle success
       setUser(response.data);
       sessionStorage.setItem('@App:user', JSON.stringify(response.data));
     })
     .catch((error) => {
-      // handle error
       console.log(error);
     })
-    .then(() =>{
-      // always executed
-    });
   }
 
   function Logout() {
     setUser(null);
+    sessionStorage.setItem('@App:user', '');
   }
 
   return (
