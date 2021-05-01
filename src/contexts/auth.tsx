@@ -25,7 +25,7 @@ interface User{
 interface AuthContextData {
   signed: boolean;
   user?: User | null;
-  Login(userName: string): Promise<void>;
+  Login(userName: string): Promise<string>;
   Logout(): void;
 }
 
@@ -46,14 +46,18 @@ export default function AuthProvider({ children }: AuthContextProviderProps) {
     }
   }, []);
 
-  async function Login(userName: string) {
+  async function Login(userName: string):Promise<string> {
+    let res = ''
     await api.get(`/users/${userName}`).then( (response) => {
       setUser(response.data);
       sessionStorage.setItem('@App:user', JSON.stringify(response.data));
+      res =  'ok'
     })
     .catch((error) => {
       console.log(error);
+      res =  'error'
     })
+    return res
   }
 
   function Logout() {
